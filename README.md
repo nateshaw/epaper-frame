@@ -6,7 +6,7 @@ This guide explains how to create a Wi-Fi-controlled ePaper digital photo frame 
 
 ## 🧰 Hardware Required
 
-- Raspberry Pi Zero 2 W or any compatible model
+- Raspberry Pi 4B or any compatible model
 - Waveshare 7.3" e-Paper display (connected via SPI)
 - microSD card with Raspberry Pi OS Bookworm
 - Power supply, case, and optional stand
