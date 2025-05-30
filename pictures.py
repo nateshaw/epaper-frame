@@ -88,6 +88,17 @@ def home():
         <form action="/resume" method="GET" style="margin-top: 15px;">
             <button type="submit" style="font-size: 1.2em;">🔁 Resume Slideshow</button>
         </form>
+        <form action="/clear" method="get" style="display: inline-block; margin-left: 10px;">
+            <button style="
+                padding: 12px 24px;
+                font-size: 1.2em;
+                background-color: #e53935;
+                color: white;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+            ">🧹 Clear Screen</button>
+         </form>
     </body>
     </html>
     """
@@ -124,6 +135,14 @@ def resume_slideshow():
     image_control["paused"] = False
     image_control["casted_path"] = None
     image_control["cast_displayed"] = False
+    return redirect("/")
+
+@app.route("/clear")
+def clear_display():
+    from waveshare_epd import epd7in3e
+    epd = epd7in3e.EPD()
+    epd.init()
+    epd.Clear()
     return redirect("/")
 
 def get_image_list(directory):
